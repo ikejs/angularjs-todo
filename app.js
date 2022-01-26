@@ -6,6 +6,12 @@ todoApp.controller('TodoController', ($scope) => {
     { name: "Build todo app", done: false }
   ];
 
+  $scope.getTotalTodos = () => {
+    const todosNotDone = 
+      $scope.todos.filter((todo) => !todo.done);
+    return todosNotDone.length;
+  }
+
   $scope.addTodo = () => {
     let { todos, inputValue } = $scope;
     todos.push({

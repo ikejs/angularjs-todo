@@ -10,7 +10,7 @@
   </head>
   <body>
     <div ng-controller="TodoController" class="col-md-3 offset-md-5">
-      <h2>Tasks</h2>
+      <h2><span class="badge bg-secondary">{{getTotalTodos()}}</span> to do</h2>
       <ul class="list-unstyled">
         <li ng-repeat="todo in todos">
           <label class="done-{{todo.done}}">
