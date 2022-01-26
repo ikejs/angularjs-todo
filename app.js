@@ -24,4 +24,13 @@ todoApp.controller('TodoController', ($scope) => {
   $scope.change = () => {
     console.log($scope.todos);
   };
-});
+})
+
+// .directive('todoHeader', () => {
+//   return {
+//     scope: {
+//       testVar: 'test string',
+//       templateUrl: 'templates/header.html'
+//     }
+//   }
+// });
