@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Todos</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="lib/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div ng-controller="TodoController" class="col-md-3 offset-md-5">
+      <h2>Tasks</h2>
+      <ul class="list-unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done" ng-change="change()" />
+          <span class="done-{{todo.done}}">{{todo.name}}</span>
+        </li>
+      </ul>
+      <form>
+        <div class="form-group">
+          <input 
+            ng-model="inputValue"
+            ng-model-instant 
+            type="text" 
+            class="form-control" 
+            placeholder="Task name"
+          />
+          <button 
+            ng-click="addTodo()" 
+            class="btn btn-sm btn-block btn-success mt-2"
+          >
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
